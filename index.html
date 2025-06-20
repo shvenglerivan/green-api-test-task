@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>GREEN API</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 1000px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .response-block {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+      box-sizing: border-box;
+      border-radius: 8px; /* 👈 скругление полей */
+    }
+
+    #message {
+      height: 120px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 8px; /* 👈 скругление кнопок */
+    }
+
+    #getSettingsBtn {
+      margin-top: 30px;
+    }
+
+    #getStateInstanceBtn {
+      margin-top: 30px;
+      margin-bottom: 60px;
+    }
+
+    #sendMessageBtn {
+      margin-bottom: 60px;
+    }
+
+    pre {
+      background-color: #f2f2f2;
+      padding: 12px;
+      height: 688px; /* подгоняется вручную */
+      overflow: auto;
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 13px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-radius: 8px; /* 👈 скругление блока ответа */
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="form">
+      <input type="text" id="idInstance" placeholder="Вставьте idInstance" />
+      <input type="text" id="apiTokenInstance" placeholder="Вставьте ApiTokenInstance" />
+
+      <button id="getSettingsBtn" onclick="getSettings()">getSettings</button>
+      <button id="getStateInstanceBtn" onclick="getStateInstance()">getStateInstance</button>
+
+      <input type="text" id="chatId" placeholder="Введите номер получателя (Например: 77001234567)" />
+      <input type="text" id="message" placeholder="Введите сюда текст сообщения" />
+      <button id="sendMessageBtn" onclick="sendMessage()">sendMessage</button>
+
+      <input type="text" id="filePhone" placeholder="Введите номер получателя (Например: 77001234567)" />
+      <input type="text" id="fileUrl" placeholder="Вставьте ссылку на картинку (Например: https://my.site.com/123.png)" />
+      <button onclick="sendFile()">sendFileByUrl</button>
+    </div>
+
+    <div class="response-block">
+      <label for="response">Ответ:</label>
+      <pre id="response" readonly></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
