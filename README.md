@@ -33,7 +33,7 @@
 
 ## Онлайн-версия
 
-[Открыть страницу в браузере](https://github.com/shvenglerivan/green-api-test-task)  
+[Открыть страницу в браузере](https://shvenglerivan.github.io/green-api-test-task/)  
 
 ---
 
