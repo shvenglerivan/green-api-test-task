@@ -55,7 +55,7 @@ async function sendFile() {
   const filePhone = document.getElementById('filePhone').value.trim() + '@c.us';
   const urlFile = document.getElementById('fileUrl').value.trim();
 
-  // Извлекаем имя файла из URL
+
   const fileName = urlFile.split('/').pop().split('?')[0] || 'file.jpg';
 
   try {
